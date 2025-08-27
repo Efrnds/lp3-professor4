@@ -1,8 +1,8 @@
 package fauna;
 
-public class Ave extends SerVivo {
+public class Sabiá extends SerVivo {
 
-    public Ave(String nome, int idade) {
+    public Sabiá(String nome, int idade) {
         super(nome, idade);
     }
 
