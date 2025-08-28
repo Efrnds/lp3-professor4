@@ -1,10 +1,10 @@
-package empresa.modelo;
+package departamento;
 
 public abstract class Pessoa {
     protected String nome;
-    protected int cpf;
+    protected String cpf;
 
-    public Pessoa(String nome, int cpf) {
+    public Pessoa(String nome, String cpf) {
         this.nome = nome;
         this.cpf = cpf;
     }
@@ -17,11 +17,9 @@ public abstract class Pessoa {
         this.nome = nome;
     }
 
-    public int getCpf() {
-        return cpf;
-    }
+    public String getCpf() { return cpf; }
 
-    public void setCpf(int cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
 

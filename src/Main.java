@@ -1,28 +1,19 @@
-import fauna.Sabiá;
-import fauna.Cachorro;
-import fauna.Homem;
+import departamento.*;
 
 public class Main {
     public static void main(String[] args) {
-        Cachorro cachorro = new Cachorro("Toto", 14);
-        Homem homem = new Homem("João", 45);
-        Sabiá sabiá = new Sabiá("PiuPiu", 1);
+        Vendedor vendedor1 = new Vendedor("Cleber", "10383072956", 50000, 2800, 60000);
+        Vendedor vendedor2 = new Vendedor("Elizabeth", "10930992834", 50000, 5000, 120000);
 
-        System.out.print(cachorro.getNome() + ", " + cachorro.getIdade() + " anos. ");
-        cachorro.exibirCaracteristica();
-        cachorro.emitirSom();
-        cachorro.mover();
+        Gerente gerente = new Gerente("Robson", "38491283921", 8000, 100000, 230000);
 
+        int totalVendas = vendedor1.getVendasRealizadas() + vendedor2.getVendasRealizadas();
+        gerente.setTotalVendasEquipe(totalVendas);
+
+        vendedor1.exibirDados();
         System.out.println();
-        System.out.print(homem.getNome() + ", " + homem.getIdade() + " anos. ");
-        homem.exibirCaracteristica();
-        homem.emitirSom();
-        homem.mover();
-
+        vendedor2.exibirDados();
         System.out.println();
-        System.out.print(sabiá.getNome() + ", " + sabiá.getIdade() + " anos. ");
-        sabiá.exibirCaracteristica();
-        sabiá.emitirSom();
-        sabiá.mover();
+        gerente.exibirDados();
     }
 }
