@@ -1,28 +1,21 @@
 package veiculos;
 
-public class PatineteEletrico implements Veiculo {
-    private String bateria;
-    private String modelo;
-    private double velocidadeAtual;
-    private int capacidadeMaxima;
+public class PatineteEletrico extends VeiculoBase {
+    private boolean luzesLigadas;
 
-    @Override
-    public void ligar() {
-
+    public PatineteEletrico(String modelo, int bateria, int capacidadeMaxima) {
+        super(modelo, bateria, capacidadeMaxima);
+        this.luzesLigadas = false;
     }
 
-    @Override
-    public void desligar() {
-
+    public void ligarLuzes() {
+        luzesLigadas = true;
+        System.out.println("Luzes ligadas.");
     }
 
     @Override
     public void exibirStatus() {
-
-    }
-
-    @Override
-    public void recarregar() {
-
+        super.exibirStatus();
+        System.out.println("Luzes: " + (luzesLigadas ? "Ligadas" : "Desligadas"));
     }
 }

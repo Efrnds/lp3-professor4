@@ -1,28 +1,21 @@
 package veiculos;
 
-public class BicicletaEletrica implements Veiculo {
-    private String bateria;
-    private String modelo;
-    private double velocidadeAtual;
-    private int capacidadeMaxima;
+public class BicicletaEletrica extends VeiculoBase {
+    private boolean modoEco;
 
-    @Override
-    public void ligar() {
-
+    public BicicletaEletrica(String modelo, int bateria, int capacidadeMaxima) {
+        super(modelo, bateria, capacidadeMaxima);
+        this.modoEco = true;
     }
 
-    @Override
-    public void desligar() {
-
+    public void ativarModoEco() {
+        modoEco = true;
+        System.out.println("Modo eco ativado.");
     }
 
     @Override
     public void exibirStatus() {
-
-    }
-
-    @Override
-    public void recarregar() {
-
+        super.exibirStatus();
+        System.out.println("Modo Eco: " + (modoEco ? "Ativado" : "Desativado"));
     }
 }

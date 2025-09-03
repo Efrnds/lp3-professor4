@@ -1,28 +1,23 @@
 package veiculos;
 
-public class CarroEletrico implements Veiculo {
-    private String bateria;
-    private String modelo;
-    private double velocidadeAtual;
-    private int capacidadeMaxima;
+public class CarroEletrico extends VeiculoBase {
+    private boolean arCondicionadoLigado;
 
-    @Override
-    public void ligar() {
-
+    public CarroEletrico(String modelo, int bateria, int capacidadeMaxima) {
+        super(modelo, bateria, capacidadeMaxima);
+        this.arCondicionadoLigado = false;
     }
 
-    @Override
-    public void desligar() {
-
+    public void ligarArCondicionado() {
+        if (!arCondicionadoLigado) {
+            arCondicionadoLigado = true;
+            System.out.println("Ar-condicionado ligado.");
+        }
     }
 
     @Override
     public void exibirStatus() {
-
-    }
-
-    @Override
-    public void recarregar() {
-
+        super.exibirStatus();
+        System.out.println("Ar-condicionado: " + (arCondicionadoLigado ? "Ligado" : "Desligado"));
     }
 }
